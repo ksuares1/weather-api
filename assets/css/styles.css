@@ -1,0 +1,55 @@
+.weather-app {
+    border: 1px solid black;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+ul{
+    list-style: none;
+}
+
+.col-3{
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.search-form{
+        margin-bottom: 20px;
+}
+
+.form-control{
+    width:100%;
+}
+
+.clouds{
+    height: 100px;
+    width: 150px;
+    margin-right: 10px;
+}
+
+a{
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.units{
+position:relative;
+top:-10px;
+left:-100px;
+right:-35px;
+}
+
+.weather-details{
+    position: relative;
+    top: 10px;
+    left: -130px;
+    right: 35px;
+    margin:0 auto;
+    width:50%;
+}
+.temperature{
+    font-size: 24px;
+}
