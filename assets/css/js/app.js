@@ -40,3 +40,17 @@ function search(event) {
 
 let searchForm = document.querySelector(".search-form");
 searchForm.addEventListener("submit", search);
+
+
+
+// [X]In your project, when a user searches for a city (example: New York), it should display the name of the city on the result page 
+// and the current temperature of the city.
+
+// Please note: there's no need to include a temperature conversion at the moment. This will be taught later on in the course.
+
+// 🙀 Bonus point:
+// Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display and the city and current temperature using the OpenWeather API.
+
+let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+let units = metric;
+let url = `https://api.openweathermap.org/data/2.5/weather?&units=${units}&appid=${apiKey}`;
