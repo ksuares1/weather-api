@@ -57,8 +57,6 @@ searchForm.addEventListener("submit", search);
 
 
 function showWeather(response) {
-  let city = response.data.name;
-  console.log(city);
   let temperature = Math.round(response.data.main.temp);
   console.log(temperature);
   let currentTemperature = document.querySelector(".temperature");
@@ -67,5 +65,5 @@ function showWeather(response) {
 
 let apiKey = "a867e25f2d83db579421a57fd8e937ec";
 let units = "metric";
-let city="Boston";
+
 
