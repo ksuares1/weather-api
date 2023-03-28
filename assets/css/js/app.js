@@ -52,17 +52,15 @@ searchForm.addEventListener("submit", search);
 // Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display and the city and current temperature using the OpenWeather API.
 
 
-function showWeather(response){
- let temperature = Math.round(response.data.main.temp);
- currentTemperature.innerHTML = `${temperature}`;
+let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+let units = "metric";
+let url = ` https://api.openweathermap.org/data/2.5/weather?&units=${units}&appid=${apiKey}`;
+console.log(url);
+
+function showWeather(response) {
+  let temperature = Math.round(response.data.main.temp);
+  console.log(temperature);
+  let currentTemperature = document.querySelector(".temperature");
+  currentTemperature.innerHTML = `${temperature}`;
 }
-
-let currentTemperature = document.querySelector(".temperature");
-
-
-function tempInfo(){
-let apiKey = "88724523008dc9e1be18f6eb6a959b67";
-let units = metric;
-let url = `https://api.openweathermap.org/data/2.5/weather?&units=${units}&appid=${apiKey}`;
 axios.get(url).then(showWeather);
-}
