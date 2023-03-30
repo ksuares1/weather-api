@@ -30,13 +30,14 @@ updateTime.innerHTML = `${day} ${time}`;
 
 // function for city update
 
+
 function search(event) {
   event.preventDefault();
-  let city = document.querySelector(".city");
-
-  let cityInput = document.querySelector("#city-input");
+ let city = document.querySelector(".city");
+ let cityInput = document.querySelector("#city-input");
   city.innerHTML = cityInput.value;
    let url = ` https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=${units}&appid=${apiKey}`;
+   console.log(url);
    axios.get(url).then(showWeather);
 }
 
@@ -67,3 +68,11 @@ let apiKey = "a867e25f2d83db579421a57fd8e937ec";
 let units = "metric";
 
 
+function showPosition(position){
+console.log(position.coords.latitude);
+console.log(position.coords.longitude);
+}
+
+let currentBtn=document.querySelector("#current-btn");
+currentBtn.addEventListener("click",showPosition);
+navigator.geolocation.getCurrentPosition(showPosition);
