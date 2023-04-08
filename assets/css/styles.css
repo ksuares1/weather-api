@@ -55,6 +55,6 @@ right:-35px;
 }
 
 footer{
-    display: flex;
-    justify-content: center;
+    
+    text-align: center;
 }
