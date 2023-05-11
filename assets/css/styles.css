@@ -42,9 +42,13 @@ left:-100px;
 right:-35px;
 }
 
+
+.weather-items{
+    padding:0px;
+}
 .weather-details{
     position: relative;
-    top: 10px;
+    top: -15px;
     left: -130px;
     right: 35px;
     margin:0 auto;
