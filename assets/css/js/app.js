@@ -63,8 +63,11 @@ function showWeather(response) {
   console.log(temperature);
   let currentTemperature = document.querySelector(".temperature");
   currentTemperature.innerHTML = `${temperature}`;
-    let iconElement=document.querySelector("#icon");
+  let descriptionElement=document.querySelector(".description");
+  descriptionElement.innerHTML=response.data.weather[0].description;
+  let iconElement=document.querySelector("#icon");
   iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "a867e25f2d83db579421a57fd8e937ec";
