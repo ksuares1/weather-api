@@ -31,7 +31,7 @@ updateTime.innerHTML = `${day} ${time}`;
 // function for city update
 
 
-function search(event) {
+function handleSubmit(event) {
   event.preventDefault();
  let city = document.querySelector(".city");
  let cityInput = document.querySelector("#city-input");
@@ -42,30 +42,34 @@ function search(event) {
 }
 
 let searchForm = document.querySelector(".search-form");
-searchForm.addEventListener("submit", search);
+searchForm.addEventListener("submit", handleSubmit);
 
 
 
-// [X]In your project, when a user searches for a city (example: New York), it should display the name of the city on the result page 
-// and the current temperature of the city.
+  function displayFahrenheitTemperature(event){
+    event.preventDefault();
+    let temperatureElement=document.querySelector(".temperature");
+    let fahTemperature=(celsiusTemperature* 9) / 5 + 32;
+    temperatureElement.innerHTML= Math.round(fahTemperature);
+    }
+    let fahrenheitElement=document.querySelector("#fahrenheit");
+    fahrenheitElement.addEventListener("click",displayFahrenheitTemperature);
 
-// Please note: there's no need to include a temperature conversion at the moment. This will be taught later on in the course.
-
-// 🙀 Bonus point:
-// Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display and the city and current temperature using the OpenWeather API.
+    let celsiusTemperature=null;
 
 
-
-
-function showWeather(response) {
+  function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   console.log(temperature);
+
+  celsiusTemperature = response.data.main.temp;
+
   let currentTemperature = document.querySelector(".temperature");
   currentTemperature.innerHTML=`${temperature}`;
   let humidityElement=document.querySelector(".humidity");
   humidityElement.innerHTML=response.data.main.humidity;
   let windElement = document.querySelector(".wind");
-  windElement.innerHTML = Math.round(response.data.wind.speed);
+  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
   let descriptionElement=document.querySelector(".description");
   descriptionElement.innerHTML=response.data.weather[0].description;
   let iconElement=document.querySelector("#icon");
@@ -75,6 +79,7 @@ function showWeather(response) {
 
 let apiKey = "a867e25f2d83db579421a57fd8e937ec";
 let units = "metric";
+
 
 
 // function showPosition(position){
