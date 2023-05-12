@@ -55,30 +55,37 @@ searchForm.addEventListener("submit", handleSubmit);
     let fahrenheitElement=document.querySelector("#fahrenheit");
     fahrenheitElement.addEventListener("click",displayFahrenheitTemperature);
 
+    function displayCelsiusTemperature(event){
+      event.preventDefault();
+      let temperatureElement = document.querySelector(".temperature");
+      temperatureElement.innerHTML = Math.round(celsiusTemperature);
+    }
     let celsiusTemperature=null;
+    let celsiusElement = document.querySelector("#celsius-link");
+    celsiusElement.addEventListener("click", displayCelsiusTemperature);
 
 
-  function showWeather(response) {
-  let temperature = Math.round(response.data.main.temp);
-  console.log(temperature);
+    function showWeather(response) {
+    let temperature = Math.round(response.data.main.temp);
+    console.log(temperature);
 
-  celsiusTemperature = response.data.main.temp;
+    celsiusTemperature = response.data.main.temp;
 
-  let currentTemperature = document.querySelector(".temperature");
-  currentTemperature.innerHTML=`${temperature}`;
-  let humidityElement=document.querySelector(".humidity");
-  humidityElement.innerHTML=response.data.main.humidity;
-  let windElement = document.querySelector(".wind");
-  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
-  let descriptionElement=document.querySelector(".description");
-  descriptionElement.innerHTML=response.data.weather[0].description;
-  let iconElement=document.querySelector("#icon");
-  iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`);
-  iconElement.setAttribute("alt", response.data.weather[0].description);
-}
+    let currentTemperature = document.querySelector(".temperature");
+    currentTemperature.innerHTML=`${temperature}`;
+    let humidityElement=document.querySelector(".humidity");
+    humidityElement.innerHTML=response.data.main.humidity;
+    let windElement = document.querySelector(".wind");
+    windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+    let descriptionElement=document.querySelector(".description");
+    descriptionElement.innerHTML=response.data.weather[0].description;
+    let iconElement=document.querySelector("#icon");
+    iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
+  }
 
-let apiKey = "a867e25f2d83db579421a57fd8e937ec";
-let units = "metric";
+  let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+  let units = "metric";
 
 
 
