@@ -64,6 +64,11 @@ footer{
 
  .active{
     color:black;
+    cursor: default;
+}
+
+.units:hover{
+    text-decoration: none;
 }
 .coder{
     color:blue;
