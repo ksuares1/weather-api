@@ -37,11 +37,10 @@
     </ul>
 
 
-<div class="row">
+<div class="row current-weather">
     <div class="col-3">
-       
-        <img class="clouds" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCLLa27G0XcyipO_5vH7k1jLY8_BVCNuPjkA&usqp=CAU" id="icon" alt="cloudy-day"/>
-        </div>
+    <img class="clouds" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCLLa27G0XcyipO_5vH7k1jLY8_BVCNuPjkA&usqp=CAU" id="icon" alt="cloudy-day"/>
+    </div>
      <div class="col-3">
         <strong><span class="temperature">
             61</strong>
@@ -60,16 +59,25 @@
     <div class="col-3 weather-items">
         <ul class="weather-details">
             
-        <li class="humidity">
-            Humidity: 77%
+        <li>
+            Humidity: <span class="humidity">77</span>
+            %
         </li>
             
-        <li class="wind">
-            Wind: 8km/h
-        </li>
+        <li>Wind: <span class="wind"> </span> km/h </li>
         </ul>
         </div>
         </div> 
+       
+        <!-- Weekly Forecast -->
+        <div class="weather-forecast">
+            <div class="row">
+                <div class="col-2">
+                    Thursday
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAZ9JREFUaN7tmdGNgzAMhhmBERiBEVjgJEbICIyQERiBTS4j5JU3RmCDnHNyq1wE1A4Jl0iJ9KtqVdv/R+xA1cYY05Ssos1XgCwBOGtd1x4kPfVNwhUFAI1rkDmRTgVyGwCMiQvjvkRWAGBoYJh/qc8JQAcAqCwAsO9NoBbQ5n1m38+g9ikAeQPgSjtofAJgTgTw0lg6wE5ppyAAmxj72CTWHB0Ae39/wPzvYEcDwKuuHzL+VkyAx81HA0h4ZKYHwNbZ/wvg4KFQcAFEJub/3Mk5ADJDgPcRWzKAVVc6wFQ6gKQA9EUD4H1AFdtCN3465jHEua8KUCzA1/c6gBbQxikI35cgZV8ZMae1ggAgUWuTgQxqIBqZnBhFjLmsFQognYRWI9HI7sRoxo6d1mIDQILOS0i9kosXNxBiPtYKAVBe0o7Yw27MQoT+WIsFYLfPSyiJRrQTY9uoJcSQapEBDoZpIxqZPCNTwOCe1uIAZDO4oQBbwOAK7uBya3EAFs7gHpwipMHl1uIADLi1XcNYGCOYMeRa9W/WClABKkAFiKofRnoGaQBkK9wAAAAASUVORK5CYII=" width="36" alt="rain-image"/>
+                </div>
+            </div>
+        </div>
 </div>
   </div>
   <div>
