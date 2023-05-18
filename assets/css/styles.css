@@ -1,18 +1,14 @@
 .weather-app {
-    border: 1px solid black;
-    padding: 15px;
+        border: 1px solid darkgray;
+    padding: 50px;
     margin: 20px auto;
     border-radius: 10px;
-    max-width: 600px;
+    max-width: 65%;
+    height: 65vh;
 }
 
 ul{
     list-style: none;
-}
-
-.col-3{
-    flex: 0 0 25%;
-    max-width: 25%;
 }
 
 .search-form{
@@ -20,9 +16,12 @@ ul{
 }
 
 .form-control{
-    width:100%;
+    width:75%;
 }
 
+.form-control-two{
+    width:25%;
+}
 .clouds{
     height: 100px;
     width: 100px;
@@ -64,6 +63,11 @@ right:-35px;
     font-size: 40px;
 }
 
+.weather-current-day-info{
+   margin:5px;
+   
+}
+
 .weather-forecast{
     margin-top:20px;
     text-align: center;
@@ -75,7 +79,7 @@ right:-35px;
 }
 
 .weather-forecast-temperatures-min{
-    opacity:0.6;
+    opacity:0.5;
 }
 
 footer{
