@@ -64,8 +64,9 @@ right:-35px;
     font-size: 40px;
 }
 
-.weather-foercast{
+.weather-forecast{
     margin-top:20px;
+    text-align: center;
 }
 
 footer{
