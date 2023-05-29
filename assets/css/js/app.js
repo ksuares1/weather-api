@@ -74,9 +74,8 @@
 
     function getForecast(coordinates){
       console.log(coordinates);
-
-      let apiKey ="ca1ffb1091b0df583fbba9435o82b47t5";
-      let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query={query}&key={key}`;
+         let apiKey = "ca1ffb1091b0df583fbba9435o82b47tc";
+      let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query={query}&key={apiKey}`;
         axios.get(apiUrl).then(displayForecast);
       }
     let searchForm = document.querySelector(".search-form");
