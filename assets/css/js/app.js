@@ -71,6 +71,14 @@
       axios.get(url).then(showWeather);
     }
 
+
+    function getForecast(coordinates){
+      console.log(coordinates);
+
+      let apiKey ="ca1ffb1091b0df583fbba9435o82b47t5";
+      let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query={query}&key={key}`;
+        axios.get(apiUrl).then(displayForecast);
+      }
     let searchForm = document.querySelector(".search-form");
     searchForm.addEventListener("submit", handleSubmit);
 
@@ -91,6 +99,9 @@
       let iconElement=document.querySelector("#icon");
       iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`);
       iconElement.setAttribute("alt", response.data.weather[0].description);
+
+        getForecast(response.data.coord);
+    
     }
 
     let apiKey = "a867e25f2d83db579421a57fd8e937ec";
