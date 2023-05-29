@@ -66,7 +66,7 @@
     let city = document.querySelector(".city");
     let cityInput = document.querySelector("#city-input");
       city.innerHTML = cityInput.value;
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=${units}&appid=${apiKey}`;
+      let url = `https://api.shecodes.io/weather/v1/current?query${cityInput.value}&units=${units}&appid=${apiKey}`;
       console.log(url);
       axios.get(url).then(showWeather);
     }
@@ -93,7 +93,7 @@
       iconElement.setAttribute("alt", response.data.weather[0].description);
     }
 
-    let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+    let apiKey = "ca1ffb1091b0df583fbba9435o82b47t";
     let units = "metric";
 
 
