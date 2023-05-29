@@ -22,6 +22,14 @@
   ];
   let day = days[now.getDay()];
 
+  function displayForecast(){
+    let forecastElement = document.querySelector("#forecast");
+
+    forecastElement.innerHTML ="Forecast";
+  }
+
+   displayForecast();
+
   function updateDateInfo() {}
 
   let updateTime = document.querySelector("#time-info");
@@ -88,7 +96,8 @@
         temperatureElement.innerHTML = Math.round(celsiusTemperature);
       }
       let celsiusTemperature = null;
+      
       let celsiusLink = document.querySelector("#celsius-link");
       celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-
+  
