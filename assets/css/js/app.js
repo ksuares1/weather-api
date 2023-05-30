@@ -50,7 +50,7 @@
       console.log(forecastHTML);
   }
     
-  //  displayForecast();
+   displayForecast();
 
   function updateDateInfo() {}
 
@@ -74,7 +74,8 @@
 
     function getForecast(coordinates){
       console.log(coordinates);
-      let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&appid={apiKey}`;
+         let apiKey = "ca1ffb1091b0df583fbba9435o82b47tc";
+      let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query={query}&key={apiKey}&units=metric`;
         axios.get(apiUrl).then(displayForecast);
       }
     let searchForm = document.querySelector(".search-form");
