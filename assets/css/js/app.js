@@ -22,7 +22,8 @@
   ];
   let day = days[now.getDay()];
 
-  function displayForecast(){
+  function displayForecast(response){
+    console.log(response.data.daily);
     let forecastElement= document.querySelector("#forecast");
     
     let forecastHTML=  `<div class="row">`;
@@ -52,11 +53,21 @@
     
    displayForecast();
 
-  function updateDateInfo() {}
 
-  let updateTime = document.querySelector("#time-info");
-  updateTime.addEventListener("load", updateDateInfo);
-  updateTime.innerHTML = `${day} ${time}`;
+
+     function getForecast(coordinates) {
+       console.log(coordinates);
+       let apiKey = "3dce9b1c66837262a25b3f448d354a76";
+       let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+       axios.get(apiUrl).then(displayForecast);
+     }
+
+
+
+      function updateDateInfo() {}
+      let updateTime = document.querySelector("#time-info");
+      updateTime.addEventListener("load", updateDateInfo);
+      updateTime.innerHTML = `${day} ${time}`;
 
 
 
@@ -66,45 +77,38 @@
     let city = document.querySelector(".city");
     let cityInput = document.querySelector("#city-input");
       city.innerHTML = cityInput.value;
+      let apiKey = "a867e25f2d83db579421a57fd8e937ec";
+      let units = "metric";
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=${units}&appid=${apiKey}`;
       console.log(url);
       axios.get(url).then(showWeather);
     }
-
-
-    function getForecast(coordinates){
-      console.log(coordinates);
-         let apiKey = "ca1ffb1091b0df583fbba9435o82b47tc";
-      let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query={query}&key={apiKey}&units=metric`;
-        axios.get(apiUrl).then(displayForecast);
-      }
     let searchForm = document.querySelector(".search-form");
     searchForm.addEventListener("submit", handleSubmit);
 
-    function showWeather(response) {
-      let temperature = Math.round(response.data.main.temp);
-      console.log(temperature);
 
-      celsiusTemperature = response.data.main.temp;
+        
+      function showWeather(response) {
+        let temperature = Math.round(response.data.main.temp);
+        console.log(temperature);
 
-      let currentTemperature = document.querySelector(".temperature");
-      currentTemperature.innerHTML=`${temperature}`;
-      let humidityElement=document.querySelector(".humidity");
-      humidityElement.innerHTML=response.data.main.humidity;
-      let windElement = document.querySelector(".wind");
-      windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
-      let descriptionElement=document.querySelector(".description");
-      descriptionElement.innerHTML=response.data.weather[0].description;
-      let iconElement=document.querySelector("#icon");
-      iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`);
-      iconElement.setAttribute("alt", response.data.weather[0].description);
+        celsiusTemperature = response.data.main.temp;
+        let currentTemperature = document.querySelector(".temperature");
+        currentTemperature.innerHTML=`${temperature}`;
+        let humidityElement=document.querySelector(".humidity");
+        humidityElement.innerHTML=response.data.main.humidity;
+        let windElement = document.querySelector(".wind");
+        windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
+        let descriptionElement=document.querySelector(".description");
+        descriptionElement.innerHTML=response.data.weather[0].description;
+        let iconElement=document.querySelector("#icon");
+        iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`);
+        iconElement.setAttribute("alt", response.data.weather[0].description);
 
-        getForecast(response.data.coord);
-    
-    }
+          getForecast(response.data.coord);
+      
+      }
 
-    let apiKey = "a867e25f2d83db579421a57fd8e937ec";
-    let units = "metric";
 
 
       function displayFahrenheitTemperature(event) {
