@@ -24,24 +24,23 @@ let days = [
 ];
 let day = days[now.getDay()];
 
-function displayForecast(response) {
- let forecast= response.data.daily;
-   console.log(forecast);
-  let forecastElement = document.querySelector("#forecast");
-
-  let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay) {
-     if (forecastDay.weather && forecastDay.weather.length > 0) {
-      forecastHTML += `
-        <div class="col-2">
-        <div class="weather-forecast-date">${forecastDay.dt}</div>
-       
+	function displayForecast(response) {
+    let forecast = response.data.daily;
+    console.log(forecast);
+    let forecastElement = document.querySelector("#forecast");
+    let forecastHTML = `<div class="row">`;
+    forecast.forEach(function (forecastDay, index) {
+      console.log(forecastDay);
+      if (index < 6) {
+        forecastHTML =
+          forecastHTML +
+          `
+      <div class="col-2">
         <img
-          src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+          src=${forecastDay.condition.icon_url}
           alt=""
           width="42"
         />
-        
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max"> ${Math.round(
             forecastDay.temperature.maximum
@@ -51,13 +50,13 @@ function displayForecast(response) {
           )}° </span>
         </div>
       </div>
-      `;
-     }
-  });
+  `;
+      }
+    });
 
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+  }
 
 function updateDateInfo() { }
 let updateTime = document.querySelector("#time-info");
