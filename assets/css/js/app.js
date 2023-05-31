@@ -24,18 +24,29 @@ let days = [
 ];
 let day = days[now.getDay()];
 
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+
 	function displayForecast(response) {
-    let forecast = response.data.daily;
-    console.log(forecast);
-    let forecastElement = document.querySelector("#forecast");
-    let forecastHTML = `<div class="row">`;
-    forecast.forEach(function (forecastDay, index) {
-      console.log(forecastDay);
-      if (index < 6) {
-        forecastHTML =
-          forecastHTML +
-          `
+  let forecast = response.data.daily;
+  // console.log(forecast);
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    console.log(forecastDay);
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col-2">
+       <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
         <img
           src=${forecastDay.condition.icon_url}
           alt=""
@@ -51,12 +62,13 @@ let day = days[now.getDay()];
         </div>
       </div>
   `;
-      }
-    });
+    }
+  });
 
-    forecastHTML = forecastHTML + `</div>`;
-    forecastElement.innerHTML = forecastHTML;
-  }
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function updateDateInfo() { }
 let updateTime = document.querySelector("#time-info");
