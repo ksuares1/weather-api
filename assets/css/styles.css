@@ -1,16 +1,16 @@
-
-
-
+body{
+    background-image: url("../media/bg-butterflies.jpg");
+    background-size: cover;
+}
 
 .weather-app {
     border: 1px solid darkgray;
     padding: 50px;
-    margin: 20px auto;
+    margin: 50px auto;
     border-radius: 10px;
-    max-width: 60%;
-    height: 95vh;
-    background-image: url("../media/bg-butterflies.jpg");
-    background-size: cover;
+    max-width: 50%;
+    height: 65vh;
+    background:white;
 
 }
 
@@ -22,13 +22,7 @@ ul{
         margin-bottom: 20px;
 }
 
-#city-input{
-    width:75%;
-}
 
-.form-control-two{
-    width:25%;
-}
 .clouds{
     height: 100px;
     width: 100px;
@@ -42,7 +36,7 @@ ul{
 }
 
 a{
-    color: #007bff;
+    color: white;
     text-decoration: none;
     background-color: transparent;
 }
@@ -75,6 +69,12 @@ right:-35px;
    
 }
 
+
+a{
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
 .weather-forecast{
     margin-top:20px;
     text-align: center;
