@@ -80,8 +80,14 @@ right:-35px;
 #fahrenheit{
     color:black;
     position: relative;
-    left: -100px;
+    left: -170px;
     font-weight: bold;
+}
+
+
+.temperature{
+    position: relative;
+    left: -60px;
 }
 .weather-forecast{
     margin-top:20px;
