@@ -1,6 +1,7 @@
 body{
     background-image: url("../media/bg-butterflies.jpg");
     background-size: cover;
+    cursor:pointer;
 }
 
 .weather-app {
@@ -70,10 +71,17 @@ right:-35px;
 }
 
 
-a{
+/* a{
     color: #007bff;
     text-decoration: none;
     background-color: transparent;
+} */
+
+#fahrenheit{
+    color:black;
+    position: relative;
+    left: -100px;
+    font-weight: bold;
 }
 .weather-forecast{
     margin-top:20px;

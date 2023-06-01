@@ -92,7 +92,7 @@ function handleSubmit(event) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "fbef01f4et1b02o0d25c27210a43ef3f";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
 let searchForm = document.querySelector(".search-form");
@@ -137,14 +137,14 @@ function showWeather(response) {
     fahrenheitElement.addEventListener("click", displayFahrenheitTemperature);
 
 
-    function displayCelsiusTemperature(event) {
-      event.preventDefault();
-      let temperatureElement = document.querySelector(".temperature");
-      celsiusLink.classList.add("active");
-      fahrenheitElement.classList.remove("active");
-      temperatureElement.innerHTML = Math.round(celsiusTemperature);
-    }
-    let celsiusTemperature = null;
+    // function displayCelsiusTemperature(event) {
+    //   event.preventDefault();
+    //   let temperatureElement = document.querySelector(".temperature");
+    //   celsiusLink.classList.add("active");
+    //   fahrenheitElement.classList.remove("active");
+    //   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+    // }
+    // let celsiusTemperature = null;
 
-    let celsiusLink = document.querySelector("#celsius-link");
-    celsiusLink.addEventListener("click", displayCelsiusTemperature);
+    // let celsiusLink = document.querySelector("#celsius-link");
+    // celsiusLink.addEventListener("click", displayCelsiusTemperature);
