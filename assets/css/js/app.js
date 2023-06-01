@@ -36,7 +36,7 @@ function formatDay(timestamp) {
 
 	function displayForecast(response) {
   let forecast = response.data.daily;
-  // console.log(forecast);
+  console.log(forecast);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
@@ -46,7 +46,7 @@ function formatDay(timestamp) {
         forecastHTML +
         `
       <div class="col-2">
-       <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+       <div class="weather-forecast-date">${formatDay(forecastDay.time)}</div>
         <img
           src=${forecastDay.condition.icon_url}
           alt=""
